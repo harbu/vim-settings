@@ -1,6 +1,6 @@
 Installation:
 
-    git clone git://github.com/nelstrom/dotvim.git ~/.vim
+    git clone git@github.com:harbu/vim-settings.git
 
 Create symlinks:
 
@@ -12,3 +12,8 @@ Switch to the `~/.vim` directory, and fetch submodules:
     cd ~/.vim
     git submodule init
     git submodule update
+
+-------------------------------------------------------------------------------
+Example file from:
+http://vimcasts.org/episodes/synchronizing-plugins-with-git-submodules-and-pathogen/
+-------------------------------------------------------------------------------
