@@ -1,0 +1,5 @@
+# Wildcards
+*~
+*.swp
+*.log
+.netrwhist
