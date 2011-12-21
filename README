@@ -13,6 +13,11 @@ Switch to the `~/.vim` directory, and fetch submodules:
     git submodule init
     git submodule update
 
+Build Command-T C-extensions
+
+    cd ~/.vim/bundle/command-t
+    rake make
+
 -------------------------------------------------------------------------------
 Example file from:
 http://vimcasts.org/episodes/synchronizing-plugins-with-git-submodules-and-pathogen/
