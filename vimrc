@@ -139,9 +139,8 @@ endif
 " pathogen initialization
 call pathogen#infect()
 
-" F2 shortcut to open nerdtree, F3 for tags
+" F2 shortcut to open nerdtree
 map <F2> :NERDTreeToggle<CR>
-map <F3> :TlistToggle<CR>
 
 " Allow omnicomplete
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
@@ -173,3 +172,6 @@ autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
 " Yanks go on clipboard instead
 set clipboard+=unnamed
+
+" Files to ignore in Command-T
+set wildignore+=*~,.git

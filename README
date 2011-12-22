@@ -1,4 +1,6 @@
-Installation:
+INSTALLATION
+
+Clone repo:
 
     git clone git@github.com:harbu/vim-settings.git
 
@@ -17,6 +19,14 @@ Build Command-T C-extensions
 
     cd ~/.vim/bundle/command-t
     rake make
+
+
+COMMANDS
+   F2 		     bring up nerdtree file browser
+   <Leader> + t      bring up Command-T file quick open
+   <Leader> + b      bring up Command-T buffer quick open
+   <S-h>             cycle through tabs
+   <S-l>
 
 -------------------------------------------------------------------------------
 Example file from:
