@@ -28,7 +28,7 @@ COMMANDS
    <S-h>             cycle through tabs
    <S-l>
 
--------------------------------------------------------------------------------
-Example file from:
-http://vimcasts.org/episodes/synchronizing-plugins-with-git-submodules-and-pathogen/
--------------------------------------------------------------------------------
+UPDATE
+
+   git submodule foreach git checkout master
+   git submodule foreach git pull
