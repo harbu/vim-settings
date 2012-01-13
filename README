@@ -20,6 +20,11 @@ Build Command-T C-extensions
     cd ~/.vim/bundle/command-t
     rake make
 
+Add a symbolic link to xmledit-plugin directory so that it works on HTML files
+
+   cd ~/.vim/bundle/xmledit/ftplugin/
+   ln -s xml.vim html.vim
+
 
 COMMANDS
    F2 		     bring up nerdtree file browser
