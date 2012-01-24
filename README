@@ -32,6 +32,8 @@ COMMANDS
    <Leader> + b      bring up Command-T buffer quick open
    <S-h>             cycle through tabs
    <S-l>
+   :%!xxd	     switch on hex mode
+   :%!xxd -r	     exit from hex mode
 
 UPDATE
 
