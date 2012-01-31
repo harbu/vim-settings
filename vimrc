@@ -175,3 +175,6 @@ set clipboard+=unnamed
 
 " Files to ignore in Command-T
 set wildignore+=*~,.git
+
+" Default encoding UTF-8
+set encoding=utf-8
