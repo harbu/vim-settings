@@ -101,7 +101,7 @@ endif
 " Allow 256-color schemes
 :set t_Co=256
 
-" Custom settings"
+" Default color scheme
 :colorscheme wombat256
 
 " Line numbering
@@ -125,7 +125,7 @@ au BufEnter * match ExtraWhitespace /\s\+$/
 au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 au InsertLeave * match ExtraWhiteSpace /\s\+$/
 
-" enable spell-checking
+" enable spell-checking for .txt files
 autocmd BufNewFile,BufRead *.txt setlocal spell spelllang=en_us
 
 " underline spelling mistakes
@@ -136,10 +136,10 @@ if version >= 700
   hi SpellLocal guisp=orange gui=undercurl guifg=NONE guibg=NONE ctermfg=NONE ctermbg=NONE term=underline cterm=underline
 endif
 
-" pathogen initialization
+" pathogen initialization so that plugins are loaded
 call pathogen#infect()
 
-" F2 shortcut to open nerdtree
+" F2 shortcut to open nerdtree file browser
 map <F2> :NERDTreeToggle<CR>
 
 " Allow omnicomplete
@@ -161,10 +161,22 @@ let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
 
 " enable neocomplcache auto-completion plugin
 let g:neocomplcache_enable_at_startup = 1
+let g:neocomplcache_enable_smart_case = 1 " wat?
+let g:neocomplcache_enable_camel_case_completion = 1 " wat?
+let g:neocomplcache_enable_underbar_completion = 1 " wat?
 let g:neocomplcache_min_syntax_length = 3
 
 " Sensible omnicomplete default settings
-set completeopt=menuone,menu,longest,preview
+"set completeopt=menuone,menu,longest,preview
+
+" neocomplcache both closes pop-up and changes line on ENTER
+inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
+
+" neocomplcache tab completion
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+
+" neocomplcache close popup and delete backword char
+inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
 
 " Auto-close preview window after omnifunction selection
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
