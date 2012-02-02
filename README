@@ -28,6 +28,7 @@ Add a symbolic link to xmledit-plugin directory so that it works on HTML files
 
 COMMANDS
    F2 		     bring up nerdtree file browser
+   F5		     strip all trailing whitespaces
    <Leader> + t      bring up Command-T file quick open
    <Leader> + b      bring up Command-T buffer quick open
    <S-h>             cycle through tabs
