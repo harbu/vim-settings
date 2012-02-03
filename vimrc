@@ -115,8 +115,10 @@ endif
 :map <S-l> gt
 
 " columns ruler at 80
-set colorcolumn=80
-highlight ColorColumn ctermbg=8 guibg=gray35
+if exists("&colorcolumn")
+  set colorcolumn=80
+  highlight ColorColumn ctermbg=8 guibg=gray35
+endif
 
 " highlight trailing whitespace
 highlight ExtraWhitespace ctermbg=red guibg=red
