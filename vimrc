@@ -192,3 +192,6 @@ set wildignore+=*~,.git
 
 " Default encoding UTF-8
 set encoding=utf-8
+
+" Handier command mode shortcut
+imap å <ESC>
