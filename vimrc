@@ -195,3 +195,6 @@ set encoding=utf-8
 
 " Handier command mode shortcut
 imap å <ESC>
+
+" allow :W to write to file (capital w)
+command! W write
