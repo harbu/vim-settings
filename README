@@ -20,6 +20,8 @@ Build Command-T C-extensions
     cd ~/.vim/bundle/command-t
     rake make
 
+    (  sudo ./multi-spec.sh                 on macosx  )
+
 Add a symbolic link to xmledit-plugin directory so that it works on HTML files
 
    cd ~/.vim/bundle/xmledit/ftplugin/
