@@ -4,6 +4,11 @@ Clone repo:
 
     git clone git@github.com:harbu/vim-settings.git
 
+Move it to home directory and rename to .vim/:
+
+    mv vim-settings/ ~
+    mv vim-settings/ .vim/
+
 Create symlinks:
 
     ln -s ~/.vim/vimrc ~/.vimrc
@@ -20,15 +25,17 @@ Build Command-T C-extensions
     cd ~/.vim/bundle/command-t
     rake make
 
-    (  sudo ./multi-spec.sh                 on macosx  )
+    (  sudo ./multi-spec.sh                 on OS X)
 
-Add a symbolic link to xmledit-plugin directory so that it works on HTML files
+Add a symbolic link to xmledit-plugin directory so that it works on HTML files:
 
    cd ~/.vim/bundle/xmledit/ftplugin/
    ln -s xml.vim html.vim
 
 
+
 COMMANDS
+
    F2 		     bring up nerdtree file browser
    F5		     strip all trailing whitespaces
    <Leader> + t      bring up Command-T file quick open
@@ -37,8 +44,12 @@ COMMANDS
    <S-l>
    :%!xxd	     switch on hex mode
    :%!xxd -r	     exit from hex mode
+   å 		     ergonomic alternative for <ESC> in insert-mode
+
+
 
 UPDATE
 
+   git pull
    git submodule foreach git checkout master
    git submodule foreach git pull
