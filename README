@@ -44,7 +44,7 @@ COMMANDS
    <S-l>
    :%!xxd	     switch on hex mode
    :%!xxd -r	     exit from hex mode
-   å 		     ergonomic alternative for <ESC> in insert-mode
+   å 		     ergonomic alternative for <ESC> in insert and visual modes
 
 
 
