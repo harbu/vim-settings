@@ -162,8 +162,9 @@ autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 " Yanks go on clipboard instead
 set clipboard+=unnamed
 
-" Files to ignore in Command-T
-set wildignore+=*~,.git
+" Files to ignore in Command-T and NERDTree
+set wildignore+=*~,.git,*.pyc
+let NERDTreeIgnore = ['\.pyc$']
 
 " Default encoding UTF-8
 set encoding=utf-8
@@ -174,6 +175,3 @@ vmap å <ESC>
 
 " allow :W to write to file (capital w)
 command! W write
-
-" ignore compiled files in nerdtree
-let NERDTreeIgnore = ['\.pyc$']
