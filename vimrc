@@ -174,3 +174,6 @@ vmap å <ESC>
 
 " allow :W to write to file (capital w)
 command! W write
+
+" ignore compiled files in nerdtree
+let NERDTreeIgnore = ['\.pyc$']
