@@ -1,9 +1,5 @@
-" Use Vim settings, rather than Vi settings (much better!).
-" This must be first, because it changes other options as a side effect.
-set nocompatible
-
-" allow backspacing over everything in insert mode
-set backspace=indent,eol,start
+set nocompatible                " Vim settings over old Vi, must be first!
+set backspace=indent,eol,start  " allow backspacing everything in insert mode
 
 if has("vms")
   set nobackup		" do not keep a backup file, use versions instead
@@ -11,8 +7,8 @@ else
   set backup		" keep a backup file
 endif
 set history=50		" keep 50 lines of command line history
-set ruler		" show the cursor position all the time
-set showcmd		" display incomplete commands
+set ruler		    " show the cursor position all the time
+set showcmd		    " display incomplete commands
 set incsearch		" do incremental searching
 
 " Don't use Ex mode, use Q for formatting
@@ -173,5 +169,11 @@ set encoding=utf-8
 imap å <ESC>
 vmap å <ESC>
 
-" allow :W to write to file (capital w)
+" Allow :W to write to file (capital w)
 command! W write
+
+" Easy split navigation (http://vimbits.com/bits/10)
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
