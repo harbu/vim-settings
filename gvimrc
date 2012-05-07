@@ -8,3 +8,6 @@ set guioptions-=L
 
 " Disable cursor blinking
 set gcr=a:blinkwait0,a:block-cursor
+
+" Set programming font
+set guifont=AnonymousPro
