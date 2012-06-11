@@ -40,6 +40,7 @@ COMMANDS
    F5		     strip all trailing whitespaces
    <Leader> + t      bring up Command-T file quick open
    <Leader> + b      bring up Command-T buffer quick open
+   <Leader> + ig     toggle indentation helper
    <S-h>             cycle through tabs
    <S-l>
    :%!xxd	     switch on hex mode
@@ -53,3 +54,11 @@ UPDATE
    git pull
    git submodule foreach git checkout master
    git submodule foreach git pull
+
+
+ADDING A SUBMODULE
+
+To add a submodule use the following command replacing <URL> and <NAME> with
+the appropriate values:
+
+   git submodule add <URL> bundle/<NAME>
