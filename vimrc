@@ -182,3 +182,7 @@ nnoremap <C-l> <C-w>l
 " Indent guide visually pleasing settings
 let g:indent_guides_start_level=3
 let g:indent_guides_guide_size=1
+
+" Shortcut to rapidly toggle `set list`
+set listchars=tab:▸\ ,eol:$
+nmap <leader>l :set list!<CR>

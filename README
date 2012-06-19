@@ -27,10 +27,12 @@ Build Command-T C-extensions
 
     (  sudo ./multi-spec.sh                 on OS X)
 
-Add a symbolic link to xmledit-plugin directory so that it works on HTML files:
+Add a symbolic link to xmledit-plugin directory so that it works on HTML and
+GSP files:
 
    cd ~/.vim/bundle/xmledit/ftplugin/
    ln -s xml.vim html.vim
+   ln -s xml.vim gsp.vim
 
 
 
@@ -41,6 +43,7 @@ COMMANDS
    <Leader> + t      bring up Command-T file quick open
    <Leader> + b      bring up Command-T buffer quick open
    <Leader> + ig     toggle indentation helper
+   <Leader> + l      toggle display of tabs and end-of-lines as characters
    <S-h>             cycle through tabs
    <S-l>
    :%!xxd	     switch on hex mode
