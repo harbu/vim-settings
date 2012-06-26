@@ -85,9 +85,9 @@ endif
 :map <S-h> gT
 :map <S-l> gt
 
-" columns ruler at 80
+" columns ruler at text width
 if exists("&colorcolumn")
-  set colorcolumn=80
+  set colorcolumn=+1
   highlight ColorColumn ctermbg=8 guibg=gray35
 endif
 
