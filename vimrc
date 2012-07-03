@@ -160,7 +160,7 @@ set clipboard+=unnamed
 
 " Files to ignore in Command-T and NERDTree
 set wildignore+=*~,.git,*.pyc
-let NERDTreeIgnore = ['\.pyc$']
+let NERDTreeIgnore = ['\.pyc$', '\~$']
 
 " Default encoding UTF-8
 set encoding=utf-8
