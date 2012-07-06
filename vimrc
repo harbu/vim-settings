@@ -130,6 +130,7 @@ autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
 if !exists('g:neocomplcache_omni_patterns')
   let g:neocomplcache_omni_patterns = {}
 endif
+
 let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
@@ -141,9 +142,6 @@ let g:neocomplcache_enable_smart_case = 1 " wat?
 let g:neocomplcache_enable_camel_case_completion = 1 " wat?
 let g:neocomplcache_enable_underbar_completion = 1 " wat?
 let g:neocomplcache_min_syntax_length = 3
-
-" Sensible omnicomplete default settings
-"set completeopt=menuone,menu,longest,preview
 
 " neocomplcache both closes pop-up and changes line on ENTER
 inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
