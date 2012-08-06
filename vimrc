@@ -68,12 +68,17 @@ if !exists(":DiffOrig")
 endif
 
 " CUSTOM SETTINGS BELOW
-"
-" Allow 256-color schemes
-:set t_Co=256
+
+" pathogen initialization so that plugins are loaded
+call pathogen#infect()
 
 " Default color scheme
-:colorscheme wombat256
+if has('gui_running')
+  set background=dark
+  colorscheme solarized
+else
+  colorscheme wombat256
+endif
 
 " Line numbering
 :set number
@@ -108,9 +113,6 @@ if version >= 700
   hi SpellRare  guisp=blue   gui=undercurl guifg=NONE guibg=NONE ctermfg=NONE ctermbg=NONE term=underline cterm=underline
   hi SpellLocal guisp=orange gui=undercurl guifg=NONE guibg=NONE ctermfg=NONE ctermbg=NONE term=underline cterm=underline
 endif
-
-" pathogen initialization so that plugins are loaded
-call pathogen#infect()
 
 " F2 shortcut to open nerdtree file browser
 map <F2> :NERDTreeToggle<CR>
@@ -182,7 +184,7 @@ let g:indent_guides_start_level=3
 let g:indent_guides_guide_size=1
 
 " Shortcut to rapidly toggle `set list`
-set listchars=tab:▸\ ,eol:$
+set listchars=tab:▸\ ,eol:¬
 nmap <leader>l :set list!<CR>
 
 " Recomennded settings for powerline plugin
