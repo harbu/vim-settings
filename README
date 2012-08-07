@@ -41,7 +41,6 @@ COMMANDS
     F2                bring up nerdtree file browser
     F6                strip all trailing whitespaces
     <c-p>             bring up fuzzy file search
-    <Leader> + ig     toggle indentation helper
     <Leader> + l      toggle display of tabs and end-of-lines as characters
     <S-h>             cycle through tabs
     <S-l>
