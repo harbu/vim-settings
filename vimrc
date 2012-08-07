@@ -69,16 +69,11 @@ endif
 
 " CUSTOM SETTINGS BELOW
 
-" pathogen initialization so that plugins are loaded
+" Pathogen initialization i.e. load bundle/*
 call pathogen#infect()
 
 " Default color scheme
-if has('gui_running')
-  set background=dark
-  colorscheme solarized
-else
-  colorscheme wombat256
-endif
+colorscheme wombat256
 
 " Line numbering
 :set number
