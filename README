@@ -38,17 +38,17 @@ GSP files:
 
 COMMANDS
 
-   F2 		     bring up nerdtree file browser
-   F5		     strip all trailing whitespaces
-   <Leader> + t      bring up Command-T file quick open
+   F2                bring up nerdtree file browser
+   F6                strip all trailing whitespaces
+   <c-p>             bring up fuzzy file search
    <Leader> + b      bring up Command-T buffer quick open
    <Leader> + ig     toggle indentation helper
    <Leader> + l      toggle display of tabs and end-of-lines as characters
    <S-h>             cycle through tabs
    <S-l>
-   :%!xxd	     switch on hex mode
-   :%!xxd -r	     exit from hex mode
-   å 		     ergonomic alternative for <ESC> in insert, visual, select
+   :%!xxd            witch on hex mode
+   :%!xxd -r         exit from hex mode
+   å                 ergonomic alternative for <ESC> in insert, visual, select
                      modes
 
 

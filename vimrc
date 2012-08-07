@@ -76,14 +76,14 @@ call pathogen#infect()
 colorscheme wombat256
 
 " Line numbering
-:set number
+set number
 
 " Highlight current line
-:set cursorline
+set cursorline
 
 " Allow SHIFT+h and SHIFT+l to cycle tabs
-:map <S-h> gT
-:map <S-l> gt
+map <S-h> gT
+map <S-l> gt
 
 " columns ruler at text width
 if exists("&colorcolumn")
@@ -113,7 +113,7 @@ endif
 map <F2> :NERDTreeToggle<CR>
 
 " F5 shortcut to strip all trailing whitespace
-nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
+nnoremap <silent> <F6> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 
 " Allow omnicomplete
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
@@ -181,6 +181,14 @@ let g:indent_guides_guide_size=1
 " Shortcut to rapidly toggle `set list`
 set listchars=tab:▸\ ,eol:¬
 nmap <leader>l :set list!<CR>
+hi SpecialKey cterm=bold ctermfg=7 guifg=gray
 
 " Recomennded settings for powerline plugin
 set laststatus=2
+
+" Default formatting options
+set expandtab
+set textwidth=79
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
