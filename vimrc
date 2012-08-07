@@ -40,9 +40,6 @@ if has("autocmd")
   augroup vimrcEx
   au!
 
-  " For all text files set textwidth to 79 characters.
-  autocmd FileType text setlocal textwidth=79
-
   " When editing a file, always jump to the last known cursor position.
   " Don't do it when the position is invalid or when inside an event handler
   " (happens when dropping a file on gvim).
@@ -59,6 +56,37 @@ else
   set autoindent		" always set autoindenting on
 endif
 
+
+" Pathogen initialization i.e. load bundle/*
+call pathogen#infect()
+
+
+" -----------------------------------------------------------------------------
+" VISUAL SETTINGS
+" -----------------------------------------------------------------------------
+
+colorscheme wombat256       " Default color scheme
+set number                  " Line numbering
+set cursorline              " Highlight current line
+
+" Visual color column at +1 of text width
+if exists("&colorcolumn")
+  set colorcolumn=+1
+  highlight ColorColumn ctermbg=8 guibg=gray35
+endif
+
+" Highlight trailing whitespace
+highlight ExtraWhitespace ctermbg=red guibg=red
+au ColorScheme * highlight ExtraWhitespace guibg=red
+au BufEnter * match ExtraWhitespace /\s\+$/
+au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+au InsertLeave * match ExtraWhiteSpace /\s\+$/
+
+
+" -----------------------------------------------------------------------------
+" COMMANDS / SHORTCUTS
+" -----------------------------------------------------------------------------
+
 " Convenient command to see the difference between the current buffer and the
 " file it was loaded from, thus the changes you made.
 " Only define it when not defined already.
@@ -67,103 +95,25 @@ if !exists(":DiffOrig")
 		  \ | wincmd p | diffthis
 endif
 
-" CUSTOM SETTINGS BELOW
-
-" Pathogen initialization i.e. load bundle/*
-call pathogen#infect()
-
-" Default color scheme
-colorscheme wombat256
-
-" Line numbering
-set number
-
-" Highlight current line
-set cursorline
-
 " Allow SHIFT+h and SHIFT+l to cycle tabs
 map <S-h> gT
 map <S-l> gt
 
-" columns ruler at text width
-if exists("&colorcolumn")
-  set colorcolumn=+1
-  highlight ColorColumn ctermbg=8 guibg=gray35
-endif
-
-" highlight trailing whitespace
-highlight ExtraWhitespace ctermbg=red guibg=red
-au ColorScheme * highlight ExtraWhitespace guibg=red
-au BufEnter * match ExtraWhitespace /\s\+$/
-au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-au InsertLeave * match ExtraWhiteSpace /\s\+$/
-
-" enable spell-checking for .txt files
-autocmd BufNewFile,BufRead *.txt setlocal spell spelllang=en_us
-
-" underline spelling mistakes
-if version >= 700
-  hi SpellBad   guisp=red    gui=undercurl guifg=NONE guibg=NONE ctermfg=NONE ctermbg=NONE term=underline cterm=underline
-  hi SpellCap   guisp=yellow gui=undercurl guifg=NONE guibg=NONE ctermfg=NONE ctermbg=NONE term=underline cterm=underline
-  hi SpellRare  guisp=blue   gui=undercurl guifg=NONE guibg=NONE ctermfg=NONE ctermbg=NONE term=underline cterm=underline
-  hi SpellLocal guisp=orange gui=undercurl guifg=NONE guibg=NONE ctermfg=NONE ctermbg=NONE term=underline cterm=underline
-endif
-
 " F2 shortcut to open nerdtree file browser
 map <F2> :NERDTreeToggle<CR>
 
-" F5 shortcut to strip all trailing whitespace
+" Shortcut to strip all trailing whitespace
 nnoremap <silent> <F6> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
-
-" Allow omnicomplete
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
-
-" Enable heavy omni completion.
-if !exists('g:neocomplcache_omni_patterns')
-  let g:neocomplcache_omni_patterns = {}
-endif
-
-let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
-let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
-let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
-let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
-
-" enable neocomplcache auto-completion plugin
-let g:neocomplcache_enable_at_startup = 1
-let g:neocomplcache_enable_smart_case = 1 " wat?
-let g:neocomplcache_enable_camel_case_completion = 1 " wat?
-let g:neocomplcache_enable_underbar_completion = 1 " wat?
-let g:neocomplcache_min_syntax_length = 3
-
-" neocomplcache both closes pop-up and changes line on ENTER
-inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
-
-" neocomplcache close popup and delete backword char
-inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
-
-" Auto-close preview window after omnifunction selection
-autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
-autocmd InsertLeave * if pumvisible() == 0|pclose|endif
-
-" Yanks go on clipboard instead
-set clipboard+=unnamed
-
-" Files to ignore in Command-T and NERDTree
-set wildignore+=*~,.git,*.pyc
-let NERDTreeIgnore = ['\.pyc$', '\~$']
-
-" Default encoding UTF-8
-set encoding=utf-8
 
 " Handier command mode shortcut
 imap å <ESC>
 vmap å <ESC>
 smap å <ESC>
+
+" Shortcut to rapidly toggle `set list`
+set listchars=tab:▸\ ,eol:¬
+nmap <leader>l :set list!<CR>
+hi SpecialKey cterm=bold ctermfg=7 guifg=gray
 
 " Allow :W to write to file (capital w)
 command! W write
@@ -174,17 +124,76 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-" Indent guide visually pleasing settings
+" -----------------------------------------------------------------------------
+" PLUGIN SETTINGS
+" -----------------------------------------------------------------------------
+
+" Neocomplcache: Allow omnicomplete
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
+
+" Neocomplcache: Enable heavy omni completion.
+if !exists('g:neocomplcache_omni_patterns')
+  let g:neocomplcache_omni_patterns = {}
+endif
+
+let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
+let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
+let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
+
+" Neocomplcache: Enable auto-completion plugin
+let g:neocomplcache_enable_at_startup = 1
+let g:neocomplcache_enable_smart_case = 1 " wat?
+let g:neocomplcache_enable_camel_case_completion = 1 " wat?
+let g:neocomplcache_enable_underbar_completion = 1 " wat?
+let g:neocomplcache_min_syntax_length = 3
+
+" Neocomplcache: Both closes pop-up and changes line on ENTER
+inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
+
+" Neocomplcache: Close popup and delete backword char
+inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
+
+" Neocomplcache: Auto-close preview window after omnifunction selection
+autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+
+" NERDTree and CtrlP: ignore certain file types
+set wildignore+=*~,.git,*.pyc
+let NERDTreeIgnore = ['\.pyc$', '\~$']
+
+" Powerline: recommended setting
+set laststatus=2
+
+" Indent guides: visually pleasing settings
 let g:indent_guides_start_level=3
 let g:indent_guides_guide_size=1
 
-" Shortcut to rapidly toggle `set list`
-set listchars=tab:▸\ ,eol:¬
-nmap <leader>l :set list!<CR>
-hi SpecialKey cterm=bold ctermfg=7 guifg=gray
+" -----------------------------------------------------------------------------
+" ADDITIONAL FEATURES
+" -----------------------------------------------------------------------------
 
-" Recomennded settings for powerline plugin
-set laststatus=2
+" Enable spell-checking for .txt files
+autocmd BufNewFile,BufRead *.txt setlocal spell spelllang=en_us
+
+" Underline spelling mistakes
+if version >= 700
+  hi SpellBad   guisp=red    gui=undercurl guifg=NONE guibg=NONE ctermfg=NONE ctermbg=NONE term=underline cterm=underline
+  hi SpellCap   guisp=yellow gui=undercurl guifg=NONE guibg=NONE ctermfg=NONE ctermbg=NONE term=underline cterm=underline
+  hi SpellRare  guisp=blue   gui=undercurl guifg=NONE guibg=NONE ctermfg=NONE ctermbg=NONE term=underline cterm=underline
+  hi SpellLocal guisp=orange gui=undercurl guifg=NONE guibg=NONE ctermfg=NONE ctermbg=NONE term=underline cterm=underline
+endif
+
+" Yanks go on clipboard instead
+set clipboard+=unnamed
+
+" Default encoding UTF-8
+set encoding=utf-8
 
 " Default formatting options
 set expandtab

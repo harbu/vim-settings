@@ -30,34 +30,35 @@ Build Command-T C-extensions
 Add a symbolic link to xmledit-plugin directory so that it works on HTML and
 GSP files:
 
-   cd ~/.vim/bundle/xmledit/ftplugin/
-   ln -s xml.vim html.vim
-   ln -s xml.vim gsp.vim
+    cd ~/.vim/bundle/xmledit/ftplugin/
+    ln -s xml.vim html.vim
+    ln -s xml.vim gsp.vim
 
 
 
 COMMANDS
 
-   F2                bring up nerdtree file browser
-   F6                strip all trailing whitespaces
-   <c-p>             bring up fuzzy file search
-   <Leader> + b      bring up Command-T buffer quick open
-   <Leader> + ig     toggle indentation helper
-   <Leader> + l      toggle display of tabs and end-of-lines as characters
-   <S-h>             cycle through tabs
-   <S-l>
-   :%!xxd            witch on hex mode
-   :%!xxd -r         exit from hex mode
-   å                 ergonomic alternative for <ESC> in insert, visual, select
-                     modes
+    F2                bring up nerdtree file browser
+    F6                strip all trailing whitespaces
+    <c-p>             bring up fuzzy file search
+    <Leader> + b      bring up Command-T buffer quick open
+    <Leader> + ig     toggle indentation helper
+    <Leader> + l      toggle display of tabs and end-of-lines as characters
+    <S-h>             cycle through tabs
+    <S-l>
+    :%!xxd            switch on hex mode
+    :%!xxd -r         exit from hex mode
+    å                 ergonomic alternative for <ESC>
+    :DiffOrig         diff file on disk and current buffer
+
 
 
 
 UPDATE
 
-   git pull
-   git submodule foreach git checkout master
-   git submodule foreach git pull
+    git pull
+    git submodule foreach git checkout master
+    git submodule foreach git pull
 
 
 ADDING A SUBMODULE
@@ -65,4 +66,4 @@ ADDING A SUBMODULE
 To add a submodule use the following command replacing <URL> and <NAME> with
 the appropriate values:
 
-   git submodule add <URL> bundle/<NAME>
+    git submodule add <URL> bundle/<NAME>
