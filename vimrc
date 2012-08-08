@@ -113,6 +113,7 @@ smap å <ESC>
 " Shortcut to rapidly toggle `set list`
 set listchars=tab:▸\ ,eol:¬
 nmap <leader>l :set list!<CR>
+hi NonText ctermfg=7 guifg=gray
 
 " Allow :W to write to file (capital w)
 command! W write
@@ -184,11 +185,9 @@ if version >= 700
   hi SpellLocal guisp=orange gui=undercurl guifg=NONE guibg=NONE ctermfg=NONE ctermbg=NONE term=underline cterm=underline
 endif
 
-" Yanks go on clipboard instead
-set clipboard+=unnamed
-
-" Default encoding UTF-8
-set encoding=utf-8
+set clipboard+=unnamed          " Yanks go on clipboard instead
+set encoding=utf-8              " Default encoding UTF-8
+set backspace=indent,eol,start  " Allow backspacing everything in insert mode
 
 " Default formatting options
 set expandtab
