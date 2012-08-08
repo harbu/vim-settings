@@ -114,6 +114,7 @@ smap å <ESC>
 set listchars=tab:▸\ ,eol:¬
 nmap <leader>l :set list!<CR>
 hi NonText ctermfg=7 guifg=gray
+hi SpecialKey ctermfg=7 guifg=gray
 
 " Allow :W to write to file (capital w)
 command! W write
