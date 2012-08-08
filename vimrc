@@ -113,7 +113,6 @@ smap å <ESC>
 " Shortcut to rapidly toggle `set list`
 set listchars=tab:▸\ ,eol:¬
 nmap <leader>l :set list!<CR>
-hi SpecialKey cterm=bold ctermfg=7 guifg=gray
 
 " Allow :W to write to file (capital w)
 command! W write
@@ -169,10 +168,6 @@ let NERDTreeIgnore = ['\.pyc$', '\~$']
 
 " Powerline: recommended setting
 set laststatus=2
-
-" Indent guides: visually pleasing settings
-let g:indent_guides_start_level=3
-let g:indent_guides_guide_size=1
 
 " -----------------------------------------------------------------------------
 " ADDITIONAL FEATURES
