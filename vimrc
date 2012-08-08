@@ -113,8 +113,8 @@ smap å <ESC>
 " Shortcut to rapidly toggle `set list`
 set listchars=tab:▸\ ,eol:¬
 nmap <leader>l :set list!<CR>
-hi NonText ctermfg=7 guifg=gray
-hi SpecialKey ctermfg=7 guifg=gray ctermbg=234 guibg=#242424
+hi NonText ctermfg=darkgray guifg=darkgray
+hi SpecialKey ctermfg=darkgray guifg=darkgray ctermbg=234 guibg=#242424
 
 " Allow :W to write to file (capital w)
 command! W write
