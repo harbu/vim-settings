@@ -1,6 +1,6 @@
-set textwidth=100
-set tabstop=4
-set shiftwidth=4
-set autoindent
-set smartindent
-set noexpandtab
+setlocal textwidth=100
+setlocal tabstop=4
+setlocal shiftwidth=4
+setlocal autoindent
+setlocal smartindent
+setlocal noexpandtab

@@ -1,6 +1,6 @@
-set filetype=nasm
-set expandtab
-set tabstop=8
-set shiftwidth=8
-set softtabstop=8
-set autoindent
+setlocal filetype=nasm
+setlocal expandtab
+setlocal tabstop=8
+setlocal shiftwidth=8
+setlocal softtabstop=8
+setlocal autoindent

@@ -1,3 +1,3 @@
-set textwidth=120
-set tabstop=4
-set shiftwidth=4
+setlocal textwidth=120
+setlocal tabstop=4
+setlocal shiftwidth=4
