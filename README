@@ -20,13 +20,6 @@ Switch to the `~/.vim` directory, and fetch submodules:
     git submodule init
     git submodule update
 
-Build Command-T C-extensions
-
-    cd ~/.vim/bundle/command-t
-    rake make
-
-    (  sudo ./multi-spec.sh                 on OS X)
-
 Add a symbolic link to xmledit-plugin directory so that it works on HTML and
 GSP files:
 
@@ -39,6 +32,7 @@ GSP files:
 COMMANDS
 
     F2                bring up nerdtree file browser
+    F3                toggle spell checking
     F6                strip all trailing whitespaces
     <c-p>             bring up fuzzy file search
     <Leader> + l      toggle display of tabs and end-of-lines as characters

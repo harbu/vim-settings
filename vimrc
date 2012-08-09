@@ -82,6 +82,19 @@ au BufEnter * match ExtraWhitespace /\s\+$/
 au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 au InsertLeave * match ExtraWhiteSpace /\s\+$/
 
+" Style special list characters (i.e. tab, EOL)
+hi NonText ctermfg=darkgray guifg=darkgray
+hi SpecialKey ctermfg=darkgray guifg=darkgray ctermbg=NONE guibg=NONE
+
+" Underline spelling mistakes
+if version >= 700
+  hi SpellBad   guisp=red    gui=undercurl guifg=NONE guibg=NONE ctermfg=NONE ctermbg=NONE term=underline cterm=underline
+  hi SpellCap   guisp=yellow gui=undercurl guifg=NONE guibg=NONE ctermfg=NONE ctermbg=NONE term=underline cterm=underline
+  hi SpellRare  guisp=blue   gui=undercurl guifg=NONE guibg=NONE ctermfg=NONE ctermbg=NONE term=underline cterm=underline
+  hi SpellLocal guisp=orange gui=undercurl guifg=NONE guibg=NONE ctermfg=NONE ctermbg=NONE term=underline cterm=underline
+endif
+
+
 
 " -----------------------------------------------------------------------------
 " COMMANDS / SHORTCUTS
@@ -113,8 +126,6 @@ smap å <ESC>
 " Shortcut to rapidly toggle `set list`
 set listchars=tab:▸\ ,eol:¬
 nmap <leader>l :set list!<CR>
-hi NonText ctermfg=darkgray guifg=darkgray
-hi SpecialKey ctermfg=darkgray guifg=darkgray ctermbg=234 guibg=#242424
 
 " Allow :W to write to file (capital w)
 command! W write
@@ -124,6 +135,9 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+
+" Toggle spell-checking with function key
+map <F3> :setlocal spell! spelllang=en_us<CR>
 
 " -----------------------------------------------------------------------------
 " PLUGIN SETTINGS
@@ -174,17 +188,6 @@ set laststatus=2
 " -----------------------------------------------------------------------------
 " ADDITIONAL FEATURES
 " -----------------------------------------------------------------------------
-
-" Enable spell-checking for .txt files
-autocmd BufNewFile,BufRead *.txt setlocal spell spelllang=en_us
-
-" Underline spelling mistakes
-if version >= 700
-  hi SpellBad   guisp=red    gui=undercurl guifg=NONE guibg=NONE ctermfg=NONE ctermbg=NONE term=underline cterm=underline
-  hi SpellCap   guisp=yellow gui=undercurl guifg=NONE guibg=NONE ctermfg=NONE ctermbg=NONE term=underline cterm=underline
-  hi SpellRare  guisp=blue   gui=undercurl guifg=NONE guibg=NONE ctermfg=NONE ctermbg=NONE term=underline cterm=underline
-  hi SpellLocal guisp=orange gui=undercurl guifg=NONE guibg=NONE ctermfg=NONE ctermbg=NONE term=underline cterm=underline
-endif
 
 set clipboard+=unnamed          " Yanks go on clipboard instead
 set encoding=utf-8              " Default encoding UTF-8
