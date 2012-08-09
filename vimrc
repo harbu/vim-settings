@@ -116,7 +116,7 @@ map <S-l> gt
 map <F2> :NERDTreeToggle<CR>
 
 " Shortcut to strip all trailing whitespace
-nnoremap <silent> <F6> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
+nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 
 " Handier command mode shortcut
 imap å <ESC>

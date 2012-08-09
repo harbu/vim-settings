@@ -33,7 +33,7 @@ COMMANDS
 
     F2                bring up nerdtree file browser
     F3                toggle spell checking
-    F6                strip all trailing whitespaces
+    F5                strip all trailing whitespaces
     <c-p>             bring up fuzzy file search
     <Leader> + l      toggle display of tabs and end-of-lines as characters
     <S-h>             cycle through tabs
