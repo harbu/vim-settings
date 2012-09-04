@@ -43,7 +43,7 @@ COMMANDS
     :%!xxd -r         exit from hex mode
     å                 ergonomic alternative for <ESC>
     :DiffOrig         diff file on disk and current buffer
-    \\\      toggle commenting out lines of code
+    \\\               toggle commenting out lines of code
 
 
 
