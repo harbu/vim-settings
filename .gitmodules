@@ -46,3 +46,6 @@
 [submodule "bundle/vim-commentary"]
 	path = bundle/vim-commentary
 	url = git://github.com/tpope/vim-commentary.git
+[submodule "bundle/vim-bad-whitespace"]
+	path = bundle/vim-bad-whitespace
+	url = git://github.com/bitc/vim-bad-whitespace.git

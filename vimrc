@@ -75,13 +75,6 @@ if exists("&colorcolumn")
   highlight ColorColumn ctermbg=8 guibg=gray35
 endif
 
-" Highlight trailing whitespace
-highlight ExtraWhitespace ctermbg=red guibg=red
-au ColorScheme * highlight ExtraWhitespace guibg=red
-au BufEnter * match ExtraWhitespace /\s\+$/
-au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-au InsertLeave * match ExtraWhiteSpace /\s\+$/
-
 " Style special list characters (i.e. tab, EOL)
 hi NonText ctermfg=darkgray guifg=darkgray
 hi SpecialKey ctermfg=darkgray guifg=darkgray ctermbg=NONE guibg=NONE
@@ -93,7 +86,6 @@ if version >= 700
   hi SpellRare  guisp=blue   gui=undercurl guifg=NONE guibg=NONE ctermfg=NONE ctermbg=NONE term=underline cterm=underline
   hi SpellLocal guisp=orange gui=undercurl guifg=NONE guibg=NONE ctermfg=NONE ctermbg=NONE term=underline cterm=underline
 endif
-
 
 
 " -----------------------------------------------------------------------------
@@ -138,6 +130,9 @@ nnoremap <C-l> <C-w>l
 
 " Toggle spell-checking with function key
 map <F3> :setlocal spell! spelllang=en_us<CR>
+
+" Toggle whitespace highlighting
+map <F4> :ToggleBadWhitespace<CR>
 
 " -----------------------------------------------------------------------------
 " PLUGIN SETTINGS
