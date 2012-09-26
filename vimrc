@@ -194,3 +194,4 @@ set textwidth=79
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
+set formatoptions-=t            " Don't force newlines at text width bounds
