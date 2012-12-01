@@ -60,6 +60,10 @@ endif
 " Pathogen initialization i.e. load bundle/*
 call pathogen#infect()
 
+if !has("gui_running")
+    set t_Co=256
+endif
+
 
 " -----------------------------------------------------------------------------
 " VISUAL SETTINGS
