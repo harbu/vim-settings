@@ -57,17 +57,17 @@ else
 endif
 
 
-" Pathogen initialization i.e. load bundle/*
+" Pathogen initialization i.e. load bundle
 call pathogen#infect()
-
-if !has("gui_running")
-    set t_Co=256
-endif
-
 
 " -----------------------------------------------------------------------------
 " VISUAL SETTINGS
 " -----------------------------------------------------------------------------
+
+" Enable 256 colors when not using a GUI.
+if !has("gui_running")
+    set t_Co=256
+endif
 
 colorscheme wombat256       " Default color scheme
 set number                  " Line numbering
@@ -135,7 +135,7 @@ nnoremap <C-l> <C-w>l
 " Toggle spell-checking with function key
 map <F3> :setlocal spell! spelllang=en_us<CR>
 
-" Toggle whitespace highlighting
+" Toggle extraneous whitespace highlighting
 map <F4> :ToggleBadWhitespace<CR>
 
 " -----------------------------------------------------------------------------
