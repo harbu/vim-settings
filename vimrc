@@ -178,8 +178,8 @@ autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
 " NERDTree and CtrlP: ignore certain file types
-set wildignore+=*~,.git,*.pyc
-let NERDTreeIgnore = ['\.pyc$', '\~$']
+set wildignore+=*~,.git,*.pyc,*.class
+let NERDTreeIgnore = ['\.pyc$', '\.class$', '\~$']
 
 " Powerline: recommended setting
 set laststatus=2
