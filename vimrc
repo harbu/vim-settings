@@ -138,6 +138,9 @@ map <F3> :setlocal spell! spelllang=en_us<CR>
 " Toggle extraneous whitespace highlighting
 map <F4> :ToggleBadWhitespace<CR>
 
+" Clear CtrlP cache
+nmap <leader>p :CtrlPClearAllCaches<CR>
+
 " -----------------------------------------------------------------------------
 " PLUGIN SETTINGS
 " -----------------------------------------------------------------------------
@@ -183,6 +186,9 @@ let NERDTreeIgnore = ['\.pyc$', '\~$']
 
 " Powerline: recommended setting
 set laststatus=2
+
+" CtrlP: Set search directory to current file directory
+let g:ctrlp_working_path_mode = 'c'
 
 " -----------------------------------------------------------------------------
 " ADDITIONAL FEATURES
