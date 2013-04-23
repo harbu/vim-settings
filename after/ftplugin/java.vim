@@ -1,3 +1,4 @@
+setlocal textwidth=119
 setlocal noexpandtab
 setlocal tabstop=4
 setlocal shiftwidth=4
