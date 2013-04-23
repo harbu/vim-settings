@@ -187,9 +187,6 @@ let NERDTreeIgnore = ['\.pyc$', '\.class$', '\~$']
 " Powerline: recommended setting
 set laststatus=2
 
-" CtrlP: Set search directory to current file directory
-let g:ctrlp_working_path_mode = 'c'
-
 " -----------------------------------------------------------------------------
 " ADDITIONAL FEATURES
 " -----------------------------------------------------------------------------
