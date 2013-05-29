@@ -27,6 +27,10 @@ GSP files:
     ln -s xml.vim html.vim
     ln -s xml.vim gsp.vim
 
+Create a folder for temporary backup files
+
+    mkdir ~/.vim_tmp
+
 
 
 COMMANDS
