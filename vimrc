@@ -145,7 +145,7 @@ nmap <leader>p :CtrlPClearAllCaches<CR>
 " PLUGIN SETTINGS
 " -----------------------------------------------------------------------------
 
-" Neocomplcache: Allow omnicomplete
+" Neocomplete: Allow omnicomplete
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
@@ -153,30 +153,29 @@ autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
 
-" Neocomplcache: Enable heavy omni completion.
-if !exists('g:neocomplcache_omni_patterns')
-  let g:neocomplcache_omni_patterns = {}
+" Neocomplete: Enable heavy omni completion.
+if !exists('g:neocomplete#sources#omni#input_patterns')
+  let g:neocomplete#sources#omni#input_patterns = {}
 endif
 
-let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
-let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
-let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
-let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
+let g:neocomplete#sources#omni#input_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
+let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
+let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
 
-" Neocomplcache: Enable auto-completion plugin
-let g:neocomplcache_enable_at_startup = 1
-let g:neocomplcache_enable_smart_case = 1 " wat?
-let g:neocomplcache_enable_camel_case_completion = 1 " wat?
-let g:neocomplcache_enable_underbar_completion = 1 " wat?
-let g:neocomplcache_min_syntax_length = 3
+" Neocomplete: Enable auto-completion plugin
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_smart_case = 1
+let g:neocompete#enable_camel_case_completion = 1 " wat?
+let g:neocompete#enable_underbar_completion = 1 " wat?
 
-" Neocomplcache: Both closes pop-up and changes line on ENTER
-inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
+" Neocomplete: Both closes pop-up and changes line on ENTER
+inoremap <expr><CR>  neocomplete#smart_close_popup() . "\<CR>"
 
-" Neocomplcache: Close popup and delete backword char
-inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
+" Neocomplete: Close popup and delete backword char
+inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 
-" Neocomplcache: Auto-close preview window after omnifunction selection
+" Neocomplete: Auto-close preview window after omnifunction selection
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
