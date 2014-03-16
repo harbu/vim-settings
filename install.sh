@@ -3,26 +3,31 @@
 # 1. Clone repo
 git clone git@github.com:harbu/vim-settings.git
 
-# 2. Move it to home directory and rename to .vim/
-mv vim-settings/ ~
-mv vim-settings/ .vim/
+if [ $? -eq 0 ]; then
 
-# 3. Create symlinks.
-ln -s ~/.vim/vimrc ~/.vimrc
-ln -s ~/.vim/gvimrc ~/.gvimrc
+    # 2. Move it to home directory and rename to .vim/
+    mv vim-settings/ ~
+    mv vim-settings/ .vim/
 
-# 4. Switch to the ~/.vim directory, and fetch submodules.
-cd ~/.vim
-git submodule init
-git submodule update
+    # 3. Create symlinks.
+    ln -s ~/.vim/vimrc ~/.vimrc
+    ln -s ~/.vim/gvimrc ~/.gvimrc
 
-# 5. Add a symbolic link to xmledit-plugin directory so that it works on HTML
-#    and GSP files.
-cd ~/.vim/bundle/xmledit/ftplugin/
-ln -s xml.vim html.vim
-ln -s xml.vim gsp.vim
+    # 4. Switch to the ~/.vim directory, and fetch submodules.
+    cd ~/.vim
+    git submodule init
+    git submodule update
 
-# 6. Create a folder for temporary backup files.
-mkdir ~/.vim_tmp
+    # 5. Add a symbolic link to xmledit-plugin directory so that it works on HTML
+    #    and GSP files.
+    cd ~/.vim/bundle/xmledit/ftplugin/
+    ln -s xml.vim html.vim
+    ln -s xml.vim gsp.vim
 
-echo "Installation done."
+    # 6. Create a folder for temporary backup files.
+    mkdir ~/.vim_tmp
+
+    echo "Installation done."
+else
+    echo "Failed to download repository."
+fi
