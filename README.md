@@ -1,8 +1,8 @@
-##INSTALLATION
+###INSTALLATION
 
 `curl https://raw.github.com/harbu/vim-settings/master/install.sh | sh`
 
-##COMMANDS
+###COMMANDS
 
 |F2            |   bring up nerdtree file browser                        |
 |F3            |   toggle spell checking                                 |
@@ -21,12 +21,12 @@
 
 
 
-##UPDATE
+###UPDATE
 
 `./update.sh`
 
 
-##ADDING A SUBMODULE
+###ADDING A SUBMODULE
 
 To add a submodule use the following command replacing <URL> and <NAME> with
 the appropriate values:
