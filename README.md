@@ -1,6 +1,6 @@
 ##INSTALLATION
 
-Download the `install.sh` file, chmod it to executable, and finally run it.
+`curl https://raw.github.com/harbu/vim-settings/master/install.sh | sh`
 
 ##COMMANDS
 
