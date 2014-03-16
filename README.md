@@ -1,39 +1,39 @@
-INSTALLATION
+##INSTALLATION
 
-Clone repo:
+1. Clone repo:
 
-    git clone git@github.com:harbu/vim-settings.git
+        git clone git@github.com:harbu/vim-settings.git
 
-Move it to home directory and rename to .vim/:
+2. Move it to home directory and rename to .vim/:
 
-    mv vim-settings/ ~
-    mv vim-settings/ .vim/
+        mv vim-settings/ ~
+        mv vim-settings/ .vim/
 
-Create symlinks:
+3. Create symlinks:
 
-    ln -s ~/.vim/vimrc ~/.vimrc
-    ln -s ~/.vim/gvimrc ~/.gvimrc
+        ln -s ~/.vim/vimrc ~/.vimrc
+        ln -s ~/.vim/gvimrc ~/.gvimrc
 
-Switch to the `~/.vim` directory, and fetch submodules:
+4. Switch to the `~/.vim` directory, and fetch submodules:
 
-    cd ~/.vim
-    git submodule init
-    git submodule update
+        cd ~/.vim
+        git submodule init
+        git submodule update
 
-Add a symbolic link to xmledit-plugin directory so that it works on HTML and
+5. Add a symbolic link to xmledit-plugin directory so that it works on HTML and
 GSP files:
 
-    cd ~/.vim/bundle/xmledit/ftplugin/
-    ln -s xml.vim html.vim
-    ln -s xml.vim gsp.vim
+        cd ~/.vim/bundle/xmledit/ftplugin/
+        ln -s xml.vim html.vim
+        ln -s xml.vim gsp.vim
 
-Create a folder for temporary backup files
+6. Create a folder for temporary backup files
 
-    mkdir ~/.vim_tmp
+        mkdir ~/.vim_tmp
 
 
 
-COMMANDS
+##COMMANDS
 
     F2                bring up nerdtree file browser
     F3                toggle spell checking
@@ -52,14 +52,14 @@ COMMANDS
 
 
 
-UPDATE
+##UPDATE
 
     git pull
     git submodule foreach git checkout master
     git submodule foreach git pull
 
 
-ADDING A SUBMODULE
+##ADDING A SUBMODULE
 
 To add a submodule use the following command replacing <URL> and <NAME> with
 the appropriate values:
