@@ -32,3 +32,8 @@ To add a submodule use the following command replacing <URL> and <NAME> with
 the appropriate values:
 
     git submodule add <URL> bundle/<NAME>
+
+###REMOVING A SUBMODULE
+
+    git submodule deinit bundle/<NAME>
+    git rm bundle/<NAME>
