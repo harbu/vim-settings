@@ -1,53 +1,22 @@
 ##INSTALLATION
 
-1. Clone repo:
-
-        git clone git@github.com:harbu/vim-settings.git
-
-2. Move it to home directory and rename to .vim/:
-
-        mv vim-settings/ ~
-        mv vim-settings/ .vim/
-
-3. Create symlinks:
-
-        ln -s ~/.vim/vimrc ~/.vimrc
-        ln -s ~/.vim/gvimrc ~/.gvimrc
-
-4. Switch to the `~/.vim` directory, and fetch submodules:
-
-        cd ~/.vim
-        git submodule init
-        git submodule update
-
-5. Add a symbolic link to xmledit-plugin directory so that it works on HTML and
-GSP files:
-
-        cd ~/.vim/bundle/xmledit/ftplugin/
-        ln -s xml.vim html.vim
-        ln -s xml.vim gsp.vim
-
-6. Create a folder for temporary backup files
-
-        mkdir ~/.vim_tmp
-
-
+Download the `install.sh` file, chmod it to executable, and finally run it.
 
 ##COMMANDS
 
-    F2                bring up nerdtree file browser
-    F3                toggle spell checking
-    F4                toggle highlighting of trailing whitespace
-    F5                strip all trailing whitespaces
-    <c-p>             bring up fuzzy file search
-    <Leader> + l      toggle display of tabs and end-of-lines as characters
-    <S-h>             cycle through tabs
-    <S-l>
-    :%!xxd            switch on hex mode
-    :%!xxd -r         exit from hex mode
-    å                 ergonomic alternative for <ESC>
-    :DiffOrig         diff file on disk and current buffer
-    \\\               toggle commenting out lines of code
+|F2            |   bring up nerdtree file browser                        |
+|F3            |   toggle spell checking                                 |
+|F4            |   toggle highlighting of trailing whitespace            |
+|F5            |   strip all trailing whitespaces                        |
+|<c-p>         |   bring up fuzzy file search                            |
+|<Leader> + l  |   toggle display of tabs and end-of-lines as characters |
+|<S-h>         |   cycle through tabs                                    |
+|<S-l>         |                                                         |
+|:%!xxd        |   switch on hex mode                                    |
+|:%!xxd -r     |   exit from hex mode                                    |
+|å             |   ergonomic alternative for <ESC>                       |
+|:DiffOrig     |   diff file on disk and current buffer                  |
+|\\\           |   toggle commenting out lines of code                   |
 
 
 
