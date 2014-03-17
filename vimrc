@@ -145,6 +145,11 @@ nmap <leader>p :CtrlPClearAllCaches<CR>
 " PLUGIN SETTINGS
 " -----------------------------------------------------------------------------
 
+" UltiSnips: set up
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
 " Neocomplete: Allow omnicomplete
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
