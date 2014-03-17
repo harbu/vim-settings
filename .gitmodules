@@ -7,9 +7,6 @@
 [submodule "bundle/html5.vim"]
 	path = bundle/html5.vim
 	url = https://github.com/othree/html5.vim.git
-[submodule "bundle/vim-addon-mw-utils"]
-	path = bundle/vim-addon-mw-utils
-	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
 [submodule "bundle/vim-ruby"]
 	path = bundle/vim-ruby
 	url = git://github.com/vim-ruby/vim-ruby.git
