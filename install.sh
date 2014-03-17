@@ -8,8 +8,8 @@ ln -s ~/.vim/vimrc ~/.vimrc
 ln -s ~/.vim/gvimrc ~/.gvimrc
 
 # Fetch submodules
-git -C ~/.vim submodule init
-git -C ~/.vim submodule update
+git --work-tree ~/.vim submodule init
+git --work-tree ~/.vim submodule update
 
 # Add symbolic links for xmledit so that it works on HTML and GSP files.
 ln -s ~/.vim/bundle/xmledit/ftplugin/xml.vim ~/.vim/bundle/xmledit/ftplugin/html.vim
