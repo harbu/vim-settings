@@ -145,6 +145,11 @@ nmap <leader>p :CtrlPClearAllCaches<CR>
 " PLUGIN SETTINGS
 " -----------------------------------------------------------------------------
 
+
+" Ezbar: Enable
+let g:ezbar_enable = 1
+set laststatus=2
+
 " UltiSnips: set up
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
