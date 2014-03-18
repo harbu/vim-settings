@@ -152,8 +152,8 @@ set laststatus=2
 
 " UltiSnips: set up
 let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 " Neocomplete: Allow omnicomplete
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
@@ -192,9 +192,6 @@ autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 " NERDTree and CtrlP: ignore certain file types
 set wildignore+=*~,.git,*.pyc,*.class
 let NERDTreeIgnore = ['\.pyc$', '\.class$', '\~$']
-
-" Powerline: recommended setting
-set laststatus=2
 
 " -----------------------------------------------------------------------------
 " ADDITIONAL FEATURES
