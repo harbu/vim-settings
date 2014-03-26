@@ -144,8 +144,6 @@ nmap <leader>p :CtrlPClearAllCaches<CR>
 " -----------------------------------------------------------------------------
 " PLUGIN SETTINGS
 " -----------------------------------------------------------------------------
-
-
 " Ezbar: Enable
 let g:ezbar_enable = 1
 set laststatus=2
@@ -192,6 +190,9 @@ autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 " NERDTree and CtrlP: ignore certain file types
 set wildignore+=*~,.git,*.pyc,*.class
 let NERDTreeIgnore = ['\.pyc$', '\.class$', '\~$']
+
+" delimitMate: disable on HTML/XML files
+au FileType html,xml,gsp let b:delimitMate_autoclose = 0
 
 " -----------------------------------------------------------------------------
 " ADDITIONAL FEATURES
