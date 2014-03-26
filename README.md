@@ -17,6 +17,7 @@
     å                ergonomic alternative for <ESC>
     :DiffOrig        diff file on disk and current buffer
     \\\              toggle commenting out lines of code
+    <c-_>            auto-close nearest command in LaTeX
 
 
 
