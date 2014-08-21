@@ -55,3 +55,6 @@
 [submodule "bundle/closeb"]
 	path = bundle/closeb
 	url = https://github.com/vim-scripts/closeb.git
+[submodule "bundle/editorconfig"]
+	path = bundle/editorconfig
+	url = https://github.com/editorconfig/editorconfig-vim.git
