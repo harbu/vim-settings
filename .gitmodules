@@ -58,3 +58,6 @@
 [submodule "bundle/editorconfig"]
 	path = bundle/editorconfig
 	url = https://github.com/editorconfig/editorconfig-vim.git
+[submodule "bundle/tex-pdf"]
+	path = bundle/tex-pdf
+	url = https://github.com/vim-scripts/TeX-PDF.git
