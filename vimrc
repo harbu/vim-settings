@@ -194,6 +194,9 @@ let NERDTreeIgnore = ['\.pyc$', '\.class$', '\~$']
 " delimitMate: disable on HTML/XML files
 au FileType html,xml,gsp let b:delimitMate_autoclose = 0
 
+" ctrlp: ignore folders
+let g:ctrlp_custom_ignore = 'node_modules'
+
 " -----------------------------------------------------------------------------
 " ADDITIONAL FEATURES
 " -----------------------------------------------------------------------------
