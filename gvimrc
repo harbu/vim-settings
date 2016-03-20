@@ -10,4 +10,4 @@ set guioptions-=L
 set gcr=a:blinkwait0,a:block-cursor
 
 " Set programming font
-set guifont=AnonymousPro
+set guifont=Monospace
