@@ -22,9 +22,6 @@
 [submodule "bundle/vim-bad-whitespace"]
 	path = bundle/vim-bad-whitespace
 	url = git://github.com/bitc/vim-bad-whitespace.git
-[submodule "bundle/neocomplete"]
-	path = bundle/neocomplete
-	url = https://github.com/Shougo/neocomplete.vim.git
 [submodule "bundle/ezbar"]
 	path = bundle/ezbar
 	url = https://github.com/t9md/vim-ezbar.git
