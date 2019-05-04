@@ -148,45 +148,6 @@ nmap <leader>p :CtrlPClearAllCaches<CR>
 let g:ezbar_enable = 1
 set laststatus=2
 
-" UltiSnips: set up
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-
-" Neocomplete: Allow omnicomplete
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
-
-" Neocomplete: Enable heavy omni completion.
-if !exists('g:neocomplete#sources#omni#input_patterns')
-  let g:neocomplete#sources#omni#input_patterns = {}
-endif
-
-let g:neocomplete#sources#omni#input_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
-let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
-let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
-let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
-
-" Neocomplete: Enable auto-completion plugin
-let g:neocomplete#enable_at_startup = 1
-let g:neocomplete#enable_smart_case = 1
-let g:neocompete#enable_camel_case_completion = 1 " wat?
-let g:neocompete#enable_underbar_completion = 1 " wat?
-
-" Neocomplete: Both closes pop-up and changes line on ENTER
-inoremap <expr><CR>  neocomplete#smart_close_popup() . "\<CR>"
-
-" Neocomplete: Close popup and delete backword char
-inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
-
-" Neocomplete: Auto-close preview window after omnifunction selection
-autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
-autocmd InsertLeave * if pumvisible() == 0|pclose|endif
-
 " NERDTree and CtrlP: ignore certain file types
 set wildignore+=*~,.git,*.pyc,*.class
 let NERDTreeIgnore = ['\.pyc$', '\.class$', '\~$']
