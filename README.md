@@ -1,8 +1,8 @@
-###INSTALLATION
+## Installation
 
 `curl https://raw.github.com/harbu/vim-settings/master/install.sh | sh`
 
-###COMMANDS
+## Shortcuts
 
     F2               bring up nerdtree file browser
     F3               toggle spell checking
@@ -19,22 +19,19 @@
     \\\              toggle commenting out lines of code
     <c-_>            auto-close nearest command in LaTeX
 
-
-
-
-###UPDATE
+## Updating
 
 `./update.sh`
 
 
-###ADDING A SUBMODULE
+## Adding a new submodule (plugin)
 
 To add a submodule use the following command replacing <URL> and <NAME> with
 the appropriate values:
 
     git submodule add <URL> bundle/<NAME>
 
-###REMOVING A SUBMODULE
+## Removing a submodule (plugin)
 
     git submodule deinit bundle/<NAME>
     git rm bundle/<NAME>
