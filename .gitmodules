@@ -1,9 +1,6 @@
 [submodule "bundle/nerdtree"]
 	path = bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
-[submodule "bundle/vim-cucumber"]
-	path = bundle/vim-cucumber
-	url = https://github.com/tpope/vim-cucumber.git
 [submodule "bundle/MatchTag"]
 	path = bundle/MatchTag
 	url = https://github.com/gregsexton/MatchTag.git
@@ -16,9 +13,6 @@
 [submodule "bundle/ctrlp"]
 	path = bundle/ctrlp
 	url = git://github.com/kien/ctrlp.vim.git
-[submodule "bundle/vim-commentary"]
-	path = bundle/vim-commentary
-	url = git://github.com/tpope/vim-commentary.git
 [submodule "bundle/vim-bad-whitespace"]
 	path = bundle/vim-bad-whitespace
 	url = git://github.com/bitc/vim-bad-whitespace.git
