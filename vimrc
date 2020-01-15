@@ -162,7 +162,7 @@ let g:ctrlp_custom_ignore = 'node_modules'
 " ADDITIONAL FEATURES
 " -----------------------------------------------------------------------------
 
-set clipboard+=unnamed          " Yanks go on clipboard instead
+set clipboard=unnamedplus       " Yanks go to OS clipboard instead
 set encoding=utf-8              " Default encoding UTF-8
 set backspace=indent,eol,start  " Allow backspacing everything in insert mode
 
